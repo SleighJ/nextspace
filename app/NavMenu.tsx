@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from './NavMenu.module.css';
-import NextSVG from '../public/next.svg'
+import NextSVG from '../public/next.svg';
+import { SignInButton } from "./components/buttons";
 
 const NavMenu = () => {
   return (
@@ -24,6 +25,7 @@ const NavMenu = () => {
         <li>
           <Link href={'/users'}>Users</Link>
         </li>
+        <SignInButton />
       </ul>
     </nav>
   )

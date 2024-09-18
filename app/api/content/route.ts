@@ -7,8 +7,24 @@ const posts = [
   },
 ];
 
+import NextAuth from "next-auth"
+// import { PrismaAdapter } from "@auth/prisma-adapter"
+// import { PrismaClient } from "@prisma/client"
+// import authConfig from "./auth.config"
+
+// const prisma = new PrismaClient()
+
+
 import { NextResponse } from "next/server";
+import { auth } from "@/auth";
 
 export const GET = async() => {
+  const session = await auth();
+
+  console.log(session)
+  if (!session) {
+    // redirect or render something else
+  }
+
   return NextResponse.json(posts);
 };
